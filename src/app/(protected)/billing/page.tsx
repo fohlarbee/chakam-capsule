@@ -1,11 +1,11 @@
 "use client";
 
+import ChakamCreatedEmail from "@/components/ChakamCreatedEmail";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import useCredits from "@/hooks/use-credits";
 import { createCheckoutSession } from "@/lib/stripe";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import { InfoIcon } from "lucide-react";
 import React from "react";
 
@@ -15,7 +15,6 @@ const Billing = () => {
     const creditsToBuYAmount = creditsToBuy[0]!;
     const price = (creditsToBuYAmount / 50).toFixed(2);
     const {credits} = useCredits();
-    console.log('credits', credits);
 
   return (
 
@@ -49,7 +48,7 @@ const Billing = () => {
       >
         Buy {creditsToBuYAmount} credits for ${price}
       </Button>
-        
+   
     </div>
   )
 }
